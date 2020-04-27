@@ -1,2 +1,14 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<h1>ブログの詳細</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+    <tr>
+      <td><%= @blog.title %></td>
+      <td><%= @blog.content %></td>
+    </tr>
+  </tbody>
+</table>
