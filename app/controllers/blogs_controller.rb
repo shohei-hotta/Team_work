@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :show, :destroy]
+  before_action :require_login, except: [:index]
+
   def new
     @blog = Blog.new
   end
@@ -43,5 +45,9 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def require_login
+    redirect_to new_session_url unless logged_in?
   end
 end
