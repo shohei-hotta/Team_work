@@ -1,7 +1,11 @@
+<<<<<<< 058ce1442391438d58c0d256223f7a404c252fe5
 <%= render 'form', user: @user %>
 
 <h1>Sign up</h1>
 
+=======
+<h1>Sign up</h1>
+>>>>>>> ログイン機能実装
 <%= form_with(model: @user, local: true) do |f| %>  
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -12,5 +16,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit "Create my account" %>
+<<<<<<< 058ce1442391438d58c0d256223f7a404c252fe5
 <% end %>
 
+=======
+<% end %>
+>>>>>>> ログイン機能実装

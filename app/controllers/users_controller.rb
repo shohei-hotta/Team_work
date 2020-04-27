@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< 058ce1442391438d58c0d256223f7a404c252fe5
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -60,3 +61,9 @@ class UsersController < ApplicationController
                                  :password_confirmation)
     end
 end
+=======
+  def new
+    @user = User.new
+  end
+end
+>>>>>>> ログイン機能実装
