@@ -1,0 +1,21 @@
+<h1>ブログの詳細</h1>
+
+<%= link_to "一覧", blogs_path %>
+
+<table>
+  <tbody>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>投稿者</th>
+    </tr>
+    <tr>
+      <td><%= @blog.title %></td>
+      <td><%= @blog.content %></td>
+      <td><%= @blog.user.name %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "編集", edit_blog_path %>
+<%= link_to "削除", blog_path, method: :delete, data: { confirm: "本当に削除していいですか？"} %>
