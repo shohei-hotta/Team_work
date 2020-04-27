@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-<<<<<<< 058ce1442391438d58c0d256223f7a404c252fe5
   setup do
     @user = users(:one)
   end
@@ -46,9 +45,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to users_url
   end
-=======
-  # test "the truth" do
-  #   assert true
-  # end
->>>>>>> ログイン機能実装
 end
