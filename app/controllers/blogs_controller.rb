@@ -33,6 +33,11 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
+  def destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    redirect_to blogs_url
+  end
   private
 
   def blog_params
