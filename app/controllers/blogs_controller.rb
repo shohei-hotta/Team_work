@@ -16,6 +16,15 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      redirect_to blog_url(@blog)
+    else
+      render :edit
+    end
+  end
+
   def show
     @blog = Blog.find(params[:id])
   end
