@@ -1,14 +1,7 @@
 class SessionsController < ApplicationController
-<<<<<<< ae283d55fc0f7269df712cc896dcfcad71b01b16
   def new
   end
 
-=======
-
-  def new
-  end
-  
->>>>>>> ログアウト機能実装
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -25,10 +18,5 @@ class SessionsController < ApplicationController
     flash[:notice] = 'ログアウトしました'
     redirect_to new_session_path
   end
-<<<<<<< ae283d55fc0f7269df712cc896dcfcad71b01b16
   
 end
-=======
-
-end
->>>>>>> ログアウト機能実装

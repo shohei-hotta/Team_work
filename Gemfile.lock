@@ -191,11 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< 058ce1442391438d58c0d256223f7a404c252fe5
   bcrypt (~> 3.1.7)
-=======
-  bcrypt (= 3.1.11)
->>>>>>> ログイン機能実装
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
