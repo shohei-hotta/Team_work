@@ -3,6 +3,15 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
+  def create
+    @blog = Blog.new(blog_params)
+    if @blog.save
+      redirect_to blog_url(@blog)
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
@@ -10,5 +19,11 @@ class BlogsController < ApplicationController
   end
 
   def index
+  end
+
+  private
+
+  def blog_params
+    params.require(:blog).permit(:title, :content)
   end
 end
