@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:show, :edit, :update]
+
 
   def index
     @users = User.all
@@ -59,4 +61,13 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
     end
+
+    def ensure_correct_user
+      @user = User.find(params[:id])
+      if current_user.id != @user.id
+        flash[:notice] = "権限がありません"
+        redirect_to blogs_path
+      end
+    end
+    
 end

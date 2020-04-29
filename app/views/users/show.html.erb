@@ -1,3 +1,28 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
 <%= link_to "情報編集", edit_user_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>投稿者</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @user.blogs.all.order(created_at: :desc).each do |blog| %>
+    <tr>
+    <td><%=blog.title %></td>
+    <td><%=blog.content %></td>
+    <td><%=blog.user.name %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= link_to "新規投稿", new_blog_path %>
+<%= link_to "一覧", blogs_path %>
